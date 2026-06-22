@@ -1,61 +1,76 @@
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carrinho de Compras</title>
     <link rel="stylesheet" href="WishList.css">
+    <script src="WishList.js" defer></script>
 </head>
 
 <body>
-    <nav>
-        <h2>Carrinho de Compras</h2>
-        <a href="#">Início</a>
-        <a href="#">Carrinho</a>
-        <a href="#"></a>
-        <a href="#"></a>
+    <nav class="menu-principal">
+        <h1>Carrinho de Compras</h1>
     </nav>
+
     <main>
-        <section class="secao-lista">
+        <section class="secao-lista" id="catalogo">
             <div class="lista-container">
-                <label for="nome-item">Pesquisa:</label>
-                <input type="text" id="nome-item" placeholder="Pesquise um item do catálogo">
+                <div class="cabecalho-secao">
+                    <h2>Catálogo</h2>
+                    <label for="nome-item">Pesquisar produto</label>
+                </div>
+
+                <input type="search" id="nome-item" placeholder="Digite o nome do produto">
 
                 <ol class="lista-itens" id="lista-itens">
                     <li class="produto-item">
                         <span class="produto-nome">Smartphone 5G 256GB</span>
                         <span class="produto-preco">R$ 2.499,00</span>
-                        <button class="btn-adicionar">Adicionar</button>
+                        <button class="btn-adicionar" type="button">Adicionar</button>
                     </li>
 
                     <li class="produto-item">
                         <span class="produto-nome">Notebook Core i7 16GB RAM</span>
                         <span class="produto-preco">R$ 4.299,00</span>
-                        <button class="btn-adicionar">Adicionar</button>
+                        <button class="btn-adicionar" type="button">Adicionar</button>
                     </li>
 
                     <li class="produto-item">
                         <span class="produto-nome">Monitor Gamer 144Hz 27"</span>
                         <span class="produto-preco">R$ 1.199,00</span>
-                        <button class="btn-adicionar">Adicionar</button>
+                        <button class="btn-adicionar" type="button">Adicionar</button>
                     </li>
+
                     <li class="produto-item">
                         <span class="produto-nome">Teclado Mecânico RGB</span>
                         <span class="produto-preco">R$ 299,00</span>
-                        <button class="btn-adicionar">Adicionar</button>
+                        <button class="btn-adicionar" type="button">Adicionar</button>
                     </li>
-                    
                 </ol>
 
+                <p class="mensagem-vazia" id="mensagem-catalogo">Nenhum produto encontrado.</p>
             </div>
         </section>
 
-        <section class="secao-form">
+        <section class="secao-carrinho" id="carrinho">
+            <div class="carrinho-container">
+                <div class="cabecalho-carrinho">
+                    <h2>Meu Carrinho</h2>
+                    <button class="btn-limpar" id="btn-limpar" type="button">Limpar</button>
+                </div>
 
+                <ol class="lista-carrinho" id="lista-carrinho"></ol>
+                <p class="mensagem-vazia" id="mensagem-carrinho">Seu carrinho está vazio.</p>
 
+                <div class="total-container">
+                    <span>Total:</span>
+                    <strong id="total-valor">R$ 0,00</strong>
+                </div>
+            </div>
         </section>
     </main>
-    <script src="WishList.js"></script>
 </body>
 
 </html>
