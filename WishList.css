@@ -176,6 +176,17 @@ button:hover {
     display: none;
 }
 
+.desconto {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.desconto input {
+    flex: 1;
+    width: auto;
+}
 @media (max-width: 760px) {
     .menu-principal,
     .cabecalho-secao,

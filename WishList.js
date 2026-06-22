@@ -46,6 +46,7 @@ function exibirCarrinho() {
 
     let total = 0;
 
+    //Percorre o carrinho e cria os elementos para cada produto, além de calcular o total
     carrinho.forEach((produto, indice) => {
         const item = document.createElement('li');
         item.className = 'item-carrinho';
@@ -110,4 +111,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     exibirCarrinho();
     pesquisarProdutos();
+});
+
+document.getElementById('btn-aplicar').addEventListener('click', () => {
+    const codigoDesconto = document.getElementById('codigo-desconto').value.trim();
+    const totalValor = document.getElementById('total-valor');
+    let total = converterPreco(totalValor.textContent);
+
+    if (codigoDesconto === 'DESCONTO10') {
+        total *= 0.9;
+        totalValor.textContent = moedaBrasil.format(total);
+        alert('Desconto aplicado! 10% de desconto no total.');
+        alert('Foi reduzido um total de ' + moedaBrasil.format(total * 0.1) + ' do valor original.');
+    } else {
+        alert('Código de desconto inválido.');
+    }
 });

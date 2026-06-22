@@ -1,6 +1,6 @@
 # Sistema de Carrinho de Compras
 
-Sistema simples de carrinho de compras feito com HTML, CSS e JavaScript puro. O projeto permite visualizar produtos de um catalogo, pesquisar itens, adicionar produtos ao carrinho, remover produtos, limpar o carrinho e calcular o total automaticamente.
+Sistema simples de carrinho de compras feito com HTML, CSS e JavaScript puro. O projeto permite visualizar produtos de um catalogo, pesquisar itens, adicionar produtos ao carrinho, remover produtos, limpar o carrinho, aplicar cupom de desconto e calcular o total automaticamente.
 
 ## Funcionalidades
 
@@ -11,6 +11,7 @@ Sistema simples de carrinho de compras feito com HTML, CSS e JavaScript puro. O 
 - Botao para remover itens individualmente.
 - Botao para limpar todo o carrinho.
 - Calculo automatico do valor total.
+- Cupom de desconto com codigo `DESCONTO10`.
 - Salvamento dos itens no `localStorage` do navegador.
 - Layout responsivo para computador e celular.
 
@@ -25,10 +26,10 @@ Sistema simples de carrinho de compras feito com HTML, CSS e JavaScript puro. O 
 
 ```text
 Sistema-de-carrinho/
-├── README.md
-├── WishList.html
-├── WishList.css
-└── WishList.js
+|-- README.md
+|-- WishList.html
+|-- WishList.css
+`-- WishList.js
 ```
 
 ## Descricao dos Arquivos
@@ -43,6 +44,8 @@ Arquivo principal da pagina. Ele contem a estrutura do sistema, incluindo:
 - Lista de produtos.
 - Secao do carrinho.
 - Area de total da compra.
+- Campo para digitar o codigo de desconto.
+- Botao para aplicar o desconto.
 
 ### `WishList.css`
 
@@ -65,6 +68,7 @@ Arquivo responsavel pelo funcionamento do carrinho. Ele controla:
 - Limpeza do carrinho.
 - Pesquisa de produtos.
 - Calculo do total.
+- Aplicacao do cupom de desconto.
 - Salvamento e leitura dos dados no `localStorage`.
 
 ## Como Executar
@@ -94,6 +98,8 @@ Nao e necessario instalar dependencias, pois o projeto usa apenas HTML, CSS e Ja
 5. Veja o total sendo atualizado automaticamente.
 6. Clique em `Remover` para excluir um item do carrinho.
 7. Clique em `Limpar` para esvaziar todo o carrinho.
+8. Digite `DESCONTO10` no campo de cupom.
+9. Clique em `Aplicar` para receber 10% de desconto no total.
 
 ## Funcionamento do Carrinho
 
@@ -103,25 +109,19 @@ Esse array e salvo no `localStorage`, permitindo que os produtos continuem no ca
 
 O total e recalculado sempre que um item e adicionado, removido ou quando o carrinho e limpo.
 
+## Funcionamento do Desconto
+
+O sistema possui um cupom de desconto fixo:
+
+```text
+DESCONTO10
+```
+
+Quando esse codigo e digitado no campo de desconto e o usuario clica no botao de aplicar, o JavaScript reduz 10% do valor total exibido no carrinho.
+
+Se o codigo estiver incorreto, o sistema exibe uma mensagem informando que o codigo de desconto e invalido.
+
 ## Exemplo de Produto no HTML
 
 ```html
 <li class="produto-item">
-    <span class="produto-nome">Smartphone 5G 256GB</span>
-    <span class="produto-preco">R$ 2.499,00</span>
-    <button class="btn-adicionar" type="button">Adicionar</button>
-</li>
-```
-
-## Possiveis Melhorias Futuras
-
-- Adicionar quantidade para cada produto.
-- Criar botao de finalizar compra.
-- Permitir cadastro de novos produtos.
-- Mostrar imagem dos produtos.
-- Separar os produtos em categorias.
-- Adicionar mensagem de confirmacao ao adicionar ou remover itens.
-
-## Autor
-
-Projeto desenvolvido por Lael Costa.
