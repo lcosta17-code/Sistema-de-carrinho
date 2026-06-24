@@ -9,6 +9,8 @@ body {
     background: #f4f6f8;
     color: #1f2933;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;         
+    flex-direction: column;
 }
 
 .menu-principal {
@@ -187,6 +189,25 @@ button:hover {
     flex: 1;
     width: auto;
 }
+
+footer {
+    background: #1f2933;
+    color: #ffffff;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 24px 8%;
+    margin-top: auto; /* Garante o footer na parte inferior */
+}
+
+footer a {
+    color: #7dd3fc;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
 @media (max-width: 760px) {
     .menu-principal,
     .cabecalho-secao,
@@ -208,3 +229,4 @@ button:hover {
         width: 100%;
     }
 }
+
